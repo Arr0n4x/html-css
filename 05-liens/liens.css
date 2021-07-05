@@ -1,0 +1,37 @@
+/* le selecteur pour le lien (quel que soit son etat) */
+a{
+    text-decoration: none;
+}
+
+/* le lien par defaut */
+a:link{
+    color: dodgerblue;
+}
+
+/* le lien dans son etat d'avoir déja été cliqué */
+a:visited{
+    color: dodgerblue;
+}
+
+/* lien dans son etat focus (selectionné) */
+a:focus{
+    color: red;
+    outline: 1px solid grey;
+}
+
+/* lien dans son etat de survol */
+a:hover{
+    color: blue;
+}
+
+/* lien au moment du clic */
+a:active{color: red;
+}
+
+a.google{
+    font-weight: bold;
+    color: tomato;
+}
+a.google:hover{
+    color: red;
+}

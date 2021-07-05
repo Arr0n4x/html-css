@@ -1,0 +1,56 @@
+/*Commentaire css
+    header est mon selecteur css,
+    qui permet de définir 
+    l'élément html visé , celui sur 
+    lequel s'appliquera les 
+    propriétés / valeurs css
+*/
+body{
+    /*si couleur de texte affilié à body cette couleur 
+    devient la couleur de texte de tout élément enfant à body*/
+    background-color: lightgrey;
+}
+div{
+    width: 80%;
+    /*marges extérieur appliquées à ma div*/
+    margin: 0 auto;
+    /*Border réunit les propriétés border-top/right/left/bottom 
+    border-size / border-style / border-color*/
+    border:2px solid grey;
+}
+header{
+    /*Couleur de fond*/
+    background-color: dodgerblue;
+    /*couleur du texte*/
+    color: white;
+    /*hauteur de l'élément*/
+    height: 80px;
+    /* par défaut la largeur de ce type d'élément est de 100%
+    ce qui signifie 100% de la largeur de son parent*/
+    /*text-aligne détermine le centrage du texte
+    left (defaut) center right justify*/
+    text-align: center;
+    /* padding : marge intérieure 
+    padding-top:50px ;
+    padding-right:30px ;
+    padding-bottom:50px ;
+    padding-left:30px ;*/
+    padding: 50px 40px 50px 40px;
+    margin-bottom: 20px;
+}
+nav{
+    background-color: skyblue;
+    color: white;
+    height: 30px;
+}
+main{
+    height: 600px;
+    background-color: white;
+}
+footer{
+    background-color: dodgerblue;
+    height: 50px;
+    color: white;
+}
+
+

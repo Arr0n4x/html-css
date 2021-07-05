@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+    <style>
+        textarea{
+            width: 100%;
+            height: 150px;
+            /* permet le redimentionnement ou non du textarea both (defaut) / horizontal / vertical / none */
+            resize: none;
+        }
+        /* je selectionne ici tous les éléments qui possèdent un attribut type (attribut = crochets) et dont la valeur de cet attribut est 'text' */
+        [type='text']{
+            outline: 2px solid blue;
+            border: 2px solid green;
+            width: 100px;
+            height: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Deux methodes d'envoi sont possibles :
+        le get transmet l'info dans l'url, c'est à proscrire dans la majorité des cas car trop faible en securisation
+        le post transmet l'information de manière plus securisée puisque invisible en dehors de votre serveur
+
+        Action definit l'action a mener suite a la validation : cad la page vers laquelle la validation nous envoie, ici la meme page apres rechargement.
+    -->
+    <form method="get" action="#">
+        <!-- ------------ Input type text ------------ -->
+        <p>
+            <!-- Le label est une indication sur le type de contenu attendu, son attribut for fait referrence à l'id de l'element dont il depend -->
+            <label for="id-nom">Nom (obligatoire)</label>
+            <!-- required est l'attribut qui rend son remplissage necessaire, le placeholder est un texte indicatif à l'interieur du champ. -->
+            <!-- l'attribut name permet d'attribuer un nom à la valeur du champ pour permettre sa recupération ulterieure -->
+            <input type="text" name="nom" id="id-nom" required placeholder="Votre nom ...">
+        </p>
+        <!-- ------------ Input type password ------------ -->
+        <p>
+            <!-- minlength decide du nombre minimal de caractère et maxlength le nombre maximum pour une validation acceptée -->
+            <label for="id-mdp">Mot de passe</label>
+            <input type="password" name="mdp" id="id-mdp" placeholder="mot de passe" minlength="4" maxlength="12">
+        </p>
+        <!-- ------------ Input type email ------------ -->
+        <p>
+            <label for="id-email">Email</label>
+            <!-- email necessite un caractère + @ + un autre caractère pour validation -->
+            <input type="email" name="email" id="id-email">
+        </p>
+        <!-- ------------ Input type date ------------ -->
+        <p>
+            <label for="id-anniv">Anniversaire</label>
+            <!-- input type date n'est pas encore valide pour l'ensemble des navigateurs, on preferera proposer un calendrier via js ou jquery -->
+            <input type="date" name="anniv" id="id-anniv">
+        </p>
+        <!-- ------------ Select (menu deroulant) ------------ -->
+        <p>
+            <label for="id-pays">Pays</label>
+            <select name="pays" id="id-pays">
+                <!-- disabled rend l'option inopérante, selected permet de la selectionner par defaut -->
+                <option disabled selected>Pays...</option>
+                <!-- optgroup permet de classer les differentes options dans des sous-groupes -->
+                <optgroup label="Europe">
+                    <option value="fr">France</option>
+                    <option value="it">Italie</option>
+                    <option value="es">Espagne</option>
+                </optgroup>
+                <optgroup label="Asie">
+                    <option value="ch">Chine</option>
+                    <option value="la">Laos</option>
+                    <option value="ca">Cambodge</option>
+                </optgroup>
+            </select>
+        </p>
+        <!-- ------------ Input type checkbox ------------
+            les checkbox permettent de selectionner plusieurs propositions parmi celles proposées (checked permet d'en selectionner certaines par defaut au chargement)
+        -->
+        <p>
+            <label for="id-choix">Quels sont vos fruits préférés ?</label>
+            <input type="checkbox" name="choix" value="orange">Orange
+            <input type="checkbox" name="choix" value="pomme">Pomme
+            <input type="checkbox" name="choix" value="fraise" checked>Fraise
+        </p>
+        <!-- ------------ Input type radio ------------
+            le bouton radio permet de selectionner une proposition parmi celles proposées  (checked permet d'en selectionner une par defaut au chargement)
+        -->
+        <p>
+            <label>Genre</label>
+            <input type="radio" name="genre" value="f" checked>Femme
+            <input type="radio" name="genre" value="h">Homme
+            <input type="radio" name="genre" value="n">Non binaire
+        </p>
+        <!-- ------- Input type text avec datalist --------
+            la datalist permet de proposer une liste lorsque l'utilisateur entre les premieres lettres dans le champ : l'attribut list de l'input definit l'id de la datalist selectionnée dans ce but.
+        -->
+        <p>
+            <label for="id-ville">Ville</label>
+            <input type="text" name="ville" id="id-ville" list="france">
+            <datalist id="france">
+                <option>Paris</option>
+                <option>Lyon</option>
+                <option>Lille</option>
+                <option>Nice</option>
+                <option>Perpignan</option>
+            </datalist>
+        </p>
+        <!-- ------------ Input type number ------------
+            type number n'est pas utilisée par tous les navigateurs, nous pouvons opter pour un type="text" en y ajoutant les restrictions dans pattern. Le title permet alors d'ajouter un message supplémentaire au message d'erreur.
+        -->
+        <p>
+            <label for="id-cp">Code Postal</label>
+            <input type="number" name="cp" id="id-cp">
+        <!-- ------- Input type text avec motif (pattern+ expression reguliere) ------- -->
+            <input type="text" name="cp2" id="id-cp2" pattern="[0-9]{5}" title="5 chiffres requis de 0 à 9">
+        </p>
+        <!-- ------------ textarea ------------ -->
+        <p>
+            <label for="id-adress">Adresse</label>
+            <!-- les rows et les cols permettent de definir le nombre de caractère de large et le nombre de lignes dont dispose le textarea. Sa taille peut egalement dependre du css aisni que son redimentionnement (voir balise style dans le head) -->
+            <textarea name="adresse" id="id-adress" rows="10" cols="15"></textarea>
+        </p>
+        <p>
+            <!-- ------------ Input type submit ------------ -->
+            <input type="submit" name="validation" value="Valider">
+            <!-- ------------ Input type reset ------------ -->
+            <input type="reset" name="efface" value="Recommencer">
+        </p>
+    </form>
+    <div>
+        <h2>Formulaire de recherche</h2>
+        <!--
+            resultat visible dans l'url vers la meme page
+            un champ de saisie texte a remplir obligatoirement et un bouton 'rechercher' -->
+            <form method="get" action="search.php">
+            	<input type="text" name="recherche" placeholder="Rechercher" required>
+                <input type="submit" name="recherche" value="Rechercher">
+            </form>
+    </div>
+    <div>
+        <h2>Formulaire de recrutement</h2>
+        <!-- 
+            Resultat caché vers la meme page
+            un bouton radio pour specifier mr ou mme
+            un champ de saisie pour le nom de l'expediteur
+            un champ pour son email
+            un champ pour son objet
+            un champ de saisie pour le contenu de son mail
+            une case a cocher d'acceptation des condiditions de confidentialité
+            Un bouton 'annuler' et un bouton 'envoyer'
+            tous les champs sont a remplir
+        
+        -->
+        <form method="post" action="formulaire.html" enctype="multipart/form-data">
+            <p>
+                <input type="radio" name="genre" value="mme" checked>Madame
+                <input type="radio" name="genre" value="mr">Monsieur
+            </p>
+            <p>
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" required>
+            </p>
+            <p>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </p>
+            <p>
+                <label for="objet">Objet</label>
+                <input type="text" name="objet" id="objet" required>
+            </p>
+            <p>
+                <label for="file">Votre cv</label>
+                <input type="file" name="file" id="file" required>
+            </p>
+            <p>
+                <textarea id="contenu" name="contenu" required></textarea>
+            </p>
+            
+            <input type="submit" name="envoi" value="Envoyer">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+div{
+    display: block;
+    background-color: dodgerblue;
+    width: 40%;
+    height: 50px;
+}
+span{
+    display: inline;
+    background-color: tomato;
+    /* les dimensions n'ont pas d'effet sur les elements inline */
+    width: 40%;
+    height: 50px;
+    padding: 5px 10px;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+ul li{
+    /* display par defaut d'un élément de liste */
+    display: block;
+    background: green; 
+    /* je change pour un display: inline-block */
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+}
+/* display none permet de ne pas afficher un element : ici, je display none strong quand son parent <p> est en etat survolé */
+
+p:hover strong{
+    display: none;
+}
+p em{
+    /*
+    visibility: hidden;
+    */
+    /* transparence : 0 à 1 */
+    opacity: 0.5;
+}

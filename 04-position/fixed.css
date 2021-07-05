@@ -1,0 +1,21 @@
+nav{
+    background-color: black;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 35px;
+}
+body{
+    margin-top: 45px;
+}
+/* mettre en place un carré tomato de 100px sur 100px à 15px de la droite 15px du bas en position fixed  */
+.square{
+    background-color: tomato;
+    height: 100px;
+    width: 100px;
+    right: 15px;
+    bottom: 15px;
+    position: fixed;
+}

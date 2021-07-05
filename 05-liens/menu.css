@@ -1,0 +1,40 @@
+/* je retire les marges aux deux listes ainsi que leurs puces + je les rends flex */
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+/* je passe les sous elements en column pour eviter le row par defaut. je les place en absolute
+ pour pouvoir les sortir du flux normal (elles genent plus l'affichage) sans leur donner de coordonnées
+  pour pas les déplacer + je les rends invisible d'office */
+ul li ul{
+    flex-direction: column;
+    position: absolute;
+    display: none;
+}
+/* je les rends visibles a nouveau au moment du survol du li parent de ces sous elements */
+ul li:hover ul{
+    display: block;
+    
+}
+/* je veux donner une width a des elements inline, je les transforme donc en iniline-block,
+ en alignant le texte a l'interieur */
+ul li a{
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}
+/* je determine chaque lien en terme de couleur de fond, couleur, soulignement etc... */
+nav a{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif; 
+    padding: 5px 10px;
+    
+}
+/* je change la couleur de fond au moment du survol de chaque lien */
+nav a:hover{
+    background-color: pink;
+}

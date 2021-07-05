@@ -1,0 +1,26 @@
+.conteneur{
+    width: 90%;
+    border: 2px solid red;
+    margin: 0 auto;
+    height: 600px;
+}
+#position-absolue{
+    width: 150px;
+    height: 150px;
+    background: orange;
+    /* par defaut les blocs html possedent une position : static; */
+    position: static;
+    /* on change le position pour sortir l'element du flux normal */
+    position: absolute;
+    /* maintenant qu'il est en absolute, je peux lui conferer des propriétés top, left, right, bottom 
+    Elles permettent de placer l'element en fonction de body
+    */
+    top: 0;
+    left: -140px;
+    /* temps de transition entre l'etat normal et l'état survol (:hover) */
+    transition: 1s;
+}
+/* au moment du survol par le pointeur */
+#position-absolue:hover{
+    left: 0;
+}

@@ -1,0 +1,129 @@
+
+/* alex-brush-regular - latin-ext_latin */
+@font-face {
+    font-family: 'Alex Brush';
+    font-style: normal;
+    font-weight: 400;
+    src: url('police/alex-brush-v12-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('police/alex-brush-v12-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('police/alex-brush-v12-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('police/alex-brush-v12-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('police/alex-brush-v12-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('police/alex-brush-v12-latin-ext_latin-regular.svg#AlexBrush') format('svg'); /* Legacy iOS */
+  }
+
+
+@font-face{ /*j'utilise un lien css3 d'une URL*/
+
+	font-family: "Cabin";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Cabin Regular"), local("Cabin-Regular"), url("https://themes.googleusercontent.com/static/fonts/cabin/v4/JEgmtEDzc-IH8jBshQXrYA.woff") format("woff");
+}
+@font-face { /* utilisation d'une police css3  à l'aide de fichier */
+    font-family: 'folksbold';
+    src: url('police/Folks-Bold-webfont.eot');
+    src: url('police/Folks-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('police/Folks-Bold-webfont.woff') format('woff'),
+         url('police/Folks-Bold-webfont.ttf') format('truetype'),
+         url('police/Folks-Bold-webfont.svg#folksbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*
+https://google-webfonts-helper.herokuapp.com
+*/
+/* open-sans-regular - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('police/open-sans-v18-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('police/open-sans-v18-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('police/open-sans-v18-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('police/open-sans-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('police/open-sans-v18-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('police/open-sans-v18-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+  }
+  
+  /* open-sans-800italic - latin */
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 800;
+    src: url('police/open-sans-v18-latin-800italic.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('police/open-sans-v18-latin-800italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('police/open-sans-v18-latin-800italic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('police/open-sans-v18-latin-800italic.woff') format('woff'), /* Modern Browsers */
+         url('police/open-sans-v18-latin-800italic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('police/open-sans-v18-latin-800italic.svg#OpenSans') format('svg'); /* Legacy iOS */
+  }
+  
+body{
+    margin: 0;
+    /* propriété de selection de police ou de famille de police */
+    font-family: sans-serif;
+    /* taille de la police */
+    font-size: 20px;
+}
+p{
+    border: 1px solid grey;
+    width: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* interlignage par defaut auto */
+    line-height: 30px;
+    /* graisse de la police
+    normal (defaut) bold bolder
+    400 -> 900 */
+    font-weight: 500;
+    /* un element display block est par defaut width: 100% et il pousse ce qui précede au dessu, et ce qui suit en dessous */
+    display: block;
+}
+/* span est la balise la plus générique (pas d'heritage, pas de semantique) possedant le display: inline */
+span{ 
+    display: inline;
+    color: blue;
+    /* les elements inline ne tiennent pas compte des width et des height */
+    width: 100px;
+    height: 100px;
+}
+
+strong{
+    display: inline;
+}
+h1{
+    font-size: 1.5em;
+    /* police google font */
+    font-family: 'Bebas Neue', cursive;
+    /* underline / line-through / overline */
+    text-decoration: underline dotted red;
+}
+h2{
+    /* police google font */
+    font-family: 'Roboto', sans-serif;
+    /* stylechargé par google font */
+    font-weight: 100;
+    /* lowercase / uppercase / capitalize */
+    text-transform: uppercase;
+}
+h3{
+    font-family: 'folksbold';
+}
+h4{
+    font-family: "Cabin";
+}
+h5{
+    font-family: 'Open Sans';
+    /* normal / italic / oblique */
+    font-style: italic;
+    font-weight: 800;
+}
+h6{
+    font-family: Alex Brush;
+    font-weight: 400 bold;
+    
+}

@@ -1,0 +1,48 @@
+#conteneur1{
+    border: 5px solid;
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    /* la definition de mon axe principal */
+    /* row (defaut) column row-reverse column-reverse */
+    flex-direction: row;
+    /* placement dans l'axe principal
+    flex-start (defaut) / flex-end / center / space-between / space-around
+    */
+    justify-content: space-between;
+    /* placement dans l'axe secondaire
+    flex-start (defaut) / flex-end / center */
+    align-items: center;
+    /* parametrage du retour à la ligne nowrap (defaut) wrap */
+    flex-wrap: wrap;
+}
+
+.item1{
+    background: red;
+    /* alignement particulier de l'itel dans l'axe secondaire  */
+    
+    /* ordre de disposition  */
+    order: 1;
+}
+.item2{
+    background: gold;
+    order: 2;
+}
+.item3{
+    background: green;
+    
+    order: 3;
+}
+.item1, .item2, .item3{
+    width: 22%;
+    height: 80px;
+}
+.item1{
+    height: 100px;
+}
+
+
+/*
+    https://www.youtube.com/watch?v=LNqBKTeeiWo
+*/

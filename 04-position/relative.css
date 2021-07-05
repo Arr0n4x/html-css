@@ -1,0 +1,47 @@
+.conteneur{
+    width: 90%;
+    border: 2px solid red;
+    margin: 0 auto;
+    height: 600px;
+}
+#position-relative{
+    width: 150px;
+    height: 150px;
+    background: orange;
+    /* par defaut les blocs html possedent une position : static; */
+    position: static;
+    /* on change le position pour sortir l'element du flux normal */
+    position: relative;
+    /* maintenant qu'il est en relative, je peux lui conferer des propriétés top, left, right, bottom 
+    Elles permettent de placer l'element en fonction de l'emplacement ou cet element est codé
+    */
+    top: 100px;
+    left: 100px;
+    /* temps de transition entre l'etat normal et l'état survol (:hover) */
+    transition: 1s;
+    z-index: 10;
+}
+/* au moment du survol par le pointeur */
+#position-relative:hover{
+    left: 0;
+}
+h1{
+    position: relative;
+    left: 200px;
+    /* z-index représente la profondeur */
+    z-index: -10;
+}
+/*
+    un element absolute prend en referent le body pour se placer(top right left bottom). Dans le cas ou son parent est lui meme relative, son referent n'est plus body, mais ce parent.
+*/
+.special{
+    position: relative;
+}
+.tomato{
+    width: 200px;
+    height: 200px;
+    background: tomato;
+    position: absolute;
+    top:0;
+    left: calc(50% - 100px);
+}

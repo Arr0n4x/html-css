@@ -1,0 +1,60 @@
+body{
+    /* appel a un fichier image en arrière plan de body */
+    background-image: url('../00-partage/images/fond1.jpg');
+    /* gestion de la repetition (no-repeat / repeat (defaut) / repeat-y / repeat-x */
+    background-repeat: no-repeat;
+    /* taille de l'image de fond en pixels, en pourcentage , avec des mots clefs (cover) */
+    background-size: cover ;
+    /* positionnement du background */
+    background-position: center 0;
+    /* attachement du bg en fonction du scroll */
+    background-attachment: fixed;
+    /* couleur de fond */
+    background-color: green;
+    height: 4000px;
+}
+.conteneur{
+    width: 80%;
+    height: 500px;
+    border: 2px solid #777;
+    margin: 20px auto;
+    background-color: rgba(0,191,255,0.8);
+}
+/*
+    3 methodes pour appliquer des couleurs en css
+    - des couleurs par leur nom
+    - des couleurs en hexadecimal
+        6 caractères de 0 à F
+    - des couleurs en decimal
+        3 valeurs de 0 à 255
+    https://fr.wikipedia.org/wiki/Couleur_du_Web
+
+*/
+h2{
+    border: 1px solid red;
+}
+/*
+    - retirer la puce de la liste (liste-style)
+    - appliquer l'image background check.png sur chaque element de la liste
+    - conferer les reglages eventuels sur l'image en terme de taille, position, repetition ....
+*/
+ul{
+    list-style: none;
+    padding:0;
+}
+ul li{
+    /*
+    background-image: url('check.png');
+    background-repeat: no-repeat;
+    background-position: 0 12px;
+    background-size: 10px;
+    background: color image repetition position/taille ;
+    */
+    background: no-repeat 0 12px /10px url('check.png') #fff;
+    color: grey;
+    padding: 5px 0 5px 15px;
+    
+}
+img{
+    filter: hue-rotate(90deg);;
+}

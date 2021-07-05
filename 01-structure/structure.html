@@ -1,0 +1,78 @@
+
+	<!--L'HyperText Markup Language (HTML) est un langage à balises utilisé pour la création de contenu et la structuration sémantique des pages web.
+	- création et hiérarchisation du contenu dans une structure d'éléments (balises) imbriqués
+	- chaque éléments contenant définit la valeur sémantique (la signification) du contenu aux yeux du navigateur (ex title)
+-->
+<!--
+	Un élément, par exemple, header commence à la balise ouvrante (ou balise d'ouverture) <header> et se termine apres la balise fermante (ou balise de fermeture) </header>
+	
+	Les balises indiquent la nature du contenu qu'elles encadrent. Elles disent : "Ceci est le titre de la page", "Ceci est un header", « Ceci est un paragraphe de texte », etc.
+	Certains éléments sont des balises ne proposant pas de contenu texte ou d'autres éléments, on parle d'éléments vides ou de balises orphelines exemple <meta>.
+-->
+<!--
+	Une balise ouvrante peut contenir des informations additionnelles: les attributs.
+	Certaines balises demandent parfois un attribut pour fonctionner, dautres fois ils seront optionnels.
+	Les attributs consistent en deux parties :
+	- Un nom d'attribut suivi du signe "="
+	- Une valeur d'attribut entre guillemets
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Titre de ma page</title>
+        <meta name="description" content="description de ma page">
+        <meta name="author" content="Numa">
+        <!-- Lien vers le fichier css à charger -->
+        <!-- Link est une premiere methode (la plus pratique pour mettre a jour son css) qui consiste a charger un fichier css externe a la page -->
+        <link rel="stylesheet" href="structure.css">
+        <!-- deuxieme methode plutot adaptée pour mettre en place du css pour la page concernée -->
+        <style>
+            /* du css spécifique pour cette page */
+            article{
+                height: 80px;
+                background-color: tomato;
+            }
+        </style>
+        <!-- troisieme methode pour appliquer du css: voir balises section plus bas (ligne 57) -->
+    </head>
+    <body>
+        <div>
+            <!-- L'élément HTML <header> représente un groupe de contenu introductif ou de contenu aidant à la navigation. Il peut contenir des éléments de titre, mais aussi d'autres éléments tels qu'un logo, un formulaire de recherche, etc. -->
+            <header>
+                Haut de page 
+            </header>
+            <!-- L'élément HTML <nav> représente une section d'une page ayant des liens vers d'autres pages ou des fragments de cette page. Autrement dit, c'est une section destinée à la navigation dans un document (avec des menus, des tables des matières, des index, etc.). -->
+            <nav>
+                Menu de navigation
+            </nav>
+            <!-- L’élément HTML <main> représente le contenu majoritaire du <body> du document. Le contenu principal de la zone est constitué de contenu directement en relation, ou qui étend le sujet principal du document ou de la fonctionnalité principale d'une application.
+
+            Un document ne peut pas avoir plus d'un seul élément <main> sans attribut hidden. -->
+            <main>
+                Contenu principal
+            </main>
+            <!-- L'élément HTML <section> représente une section générique d'un document, par exemple un groupe de contenu thématique. Une section commence généralement avec un titre. -->
+            <section style="border: 2px solid green;">
+                <!-- L'élément HTML <article> représente du contenu autonome dans un document, une page, une application, ou un site. Ceci peut être un message sur un forum, un article de journal ou de magazine, une parution sur un blog, un commentaire d'utilisateur, un widget ou gadget interactif, ou tout autre élément de contenu indépendant. Ce contenu est prévu pour être distribué ou réutilisé indépendamment (par exemple dans un flux de syndication). -->
+                <article>
+                    Article 1
+                </article>
+            </section>
+            <section style="border: 2px solid green;">
+                <article>
+                    Article 2
+                    <!-- L'élément HTML <aside> (en anglais, "aparté") représente une partie d'un document dont le contenu n'a qu'un rapport indirect avec le contenu principal du document. Les apartés sont fréquemment présents sous la forme d'encadrés ou de boîtes de légende. -->
+                    <aside>
+                        Apparté
+                    </aside>
+                </article>
+            </section>
+            <!-- L'élément HTML <footer> représente le pied de page de la section ou de la racine de sectionnement la plus proche. Un pied de page ou de section contient habituellement des informations sur l'auteur de la section, les données relatives au droit d'auteur (copyright) ou les liens vers d'autres documents en relation. -->
+            <footer>
+                Pied de page
+            </footer>
+        </div>
+    </body>
+</html>

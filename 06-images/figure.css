@@ -1,0 +1,29 @@
+.conteneur{
+    width: 80%;
+    border: 1px solid;
+    margin: 0 auto;
+    display: flex;
+}
+
+figure{
+    border: 2px solid grey;
+    width: 250px;
+    position: relative;
+    overflow: hidden;
+}
+img{
+    display: block;
+}
+figcaption{
+    position: absolute;
+    bottom: -45px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    transition: 0.8s;
+}
+figure:hover figcaption{
+    bottom: 0;
+}

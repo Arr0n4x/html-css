@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.conteneur{
+    border: 2px solid red;
+    width: 90%;
+    margin: 0 auto;
+}
+.conteneur div.flotte{
+    float: left;
+    width: 25%;
+    border: 1px solid;
+}
+.conteneur div.flotte:before{
+    content: "avant ";
+}
+.conteneur div.flotte:after{
+    content: " après";
+}
+/* premiere methode pour nettoyer un flux float : je créé une classe clear appliquée à un element dans le code html */
+.clear{
+    /* clear est la propriété qui permet de nettoyer (annuler) le flux float précisé aux elements qui le precedent : left / right / both (les deux) */
+    clear: both;
+}
+/* deuxieme methode : selectionner la fin du contenu du parent des elements float pour appliquer le clear à l'endroit necessaire automatiquement */
+.conteneur:after{
+    content: "";
+    display: block;
+    clear: both;
+}

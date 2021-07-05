@@ -1,0 +1,75 @@
+
+article p{ color: red; }
+
+/* ***** Pseudo éléments ***** */
+/* le premier des p */
+article p:first-child{ color: green; }
+
+/* le dernier des p */
+article p:last-child{ color: green; }
+
+/* les p pairs */
+article p:nth-child(even){ color: blue; }
+
+/* les p impairs */
+article p:nth-child(odd){ color: orange; }
+
+/* un p précisement */
+article p:nth-child(4), p:nth-child(5){ color: brown; }
+
+
+/* ******* CLASSES ******** */
+
+.fond-gris{ background: grey;}
+.grande-taille{ font-size: 24px;}
+
+.gras{ font-weight: bold;}
+
+/* ******** ID ********* */
+#monid{ font-family: sans-serif; }
+#monid2{ font-family: cursive; }
+
+
+/* selecteurs avancés */
+
+section p{
+    text-decoration: underline;
+}
+
+html body#body section#section1 p span.monspan{ color: blue !important;}
+
+span{ color: red !important;}
+
+
+
+/* 
+L'utilisation des childs n'est pas très rassurant dans le cas ou le code Html serait amené à évoluer.
+ Il est préférable de favoriser l'utilisation de classe et d'id.
+Une classe se déclare dans le document html pour cibler un éléments,
+ cela s'utilise ensuite dans le CSS pour y apporter un style spécifique.
+---------------------
+Différence entre classes & id :
+	Une classe est appelée graçe à un point".".
+	Un id est appelé grace à un dieze "#".
+	Le w3c recommande d'utiliser les ID une seule fois dans une page web
+     pour des zones principales et des classes (une ou plusieurs fois) pour tout le reste
+      (cependant, cela n'est pas une obligation).
+---------------------
+plusieurs moyens de styliser un éléments :
+	par son id: #elem
+	par sa classe: .elem
+	par sa balise: balise
+	par la balise + le numéro : balise:nth-child(1)
+---------------------
+Règle d'écriture :
+	div.zone{} veut dire "va me chercher la div qui possède la classe 'zone'".
+	div .zone{} veut dire "va me chercher la classe zone qui se trouve A L'INTERIEUR de la div 
+    (c'est l'espace qui change la signification).
+	.maclasse, .maclasse2{} : il y a des virgules, on applique le style sur plusieurs éléments.
+---------------------
+*/
+
+
+
+
+
